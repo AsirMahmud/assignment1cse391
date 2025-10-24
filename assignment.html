@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="flex">
+    <div
+      class="side-nav"
+      style="
+        width: 48px;
+        height: 100vh;
+        position: fixed;
+        background-color: #a3b18a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <nav
+        id="nav"
+        class="flex flex-col items-center justify-center w-full h-full"
+      ></nav>
+    </div>
+    <section style="margin-left: 10%; width: 100%; margin-right: 10%">
+      <div class="flex items-center">
+        <div class="hero" style="margin: 16px">
+          <h1 class="" style="font-size: 64px">Hey, I'm Asir</h1>
+          <h1 style="font-size: 72px; color: #3a5a40">A Fullstack</h1>
+          <h4 class="text-3xl" style="margin-bottom: 20px">Web Developer</h4>
+          <div class="">
+            <button style="padding: 8px; background-color: var(--third)">
+              <a href="aboutme.html"> About Me </a>
+            </button>
+            <button
+              style="background-color: var(--success); color: var(--background)"
+            >
+              <a href="https://github.com/AsirMahmud">Github</a>
+            </button>
+          </div>
+        </div>
+        <div
+          class="overflow-hidden mx-auto flex"
+          style="overflow: hidden; height: 450px; margin-top: 16px; width: 80%"
+        >
+          <div style="width: 100%" class="flex justify-end">
+            <div style="width: 50%; margin-right: 0">
+              <h1 class="text-3xl">
+                <q
+                  >Consistency is not about perfection; it's about making small,
+                  deliberate steps every day that lead to extraordinary results.
+                </q>
+              </h1>
+            </div>
+          </div>
+          <img
+            src="pf.png"
+            style="object-fit: contain; height: 100%; width: 100%"
+          />
+        </div>
+      </div>
+
+      <div id="tech-stack" class="container flex flex-col gap-4">
+        <div>
+          <h1 class="text-3xl">Tech Stack</h1>
+          <p class="text-sm">The technology I am expert on.</p>
+        </div>
+        <div id="ic" class="icon-container grid grid-cols-2"></div>
+
+        <a href="myskill.html" class="w-full" style="width: 100%"
+          ><button
+            class="w-full"
+            style="background-color: var(--success); color: var(--background)"
+          >
+            View More
+          </button></a
+        >
+      </div>
+      <div id="services" class="container flex flex-col gap-4">
+        <div>
+          <h1 class="text-3xl">My Services</h1>
+          <p class="text-sm">
+            Empowering Your Vision with Tailored App Solutions
+          </p>
+        </div>
+        <div id="service" class="icon-container grid grid-cols-2"></div>
+        <a href="assignment.html#contact" style="width: 100%"
+          ><button
+            class="w-full"
+            style="background-color: var(--success); color: var(--background)"
+          >
+            Contact Me
+          </button></a
+        >
+      </div>
+      <div id="projects" class="container flex flex-col gap-4">
+        <div>
+          <h1 class="text-3xl">My projects</h1>
+          <p class="text-sm">
+            Bringing Ideas to Life Through Innovative Projects
+          </p>
+        </div>
+        <div id="project"></div>
+      </div>
+      <div
+        id="contact"
+        class="card container flex flex-col gap-4"
+        style="background-color: var(--background); width: 70%"
+      >
+        <h1 class="text-3xl">Contact Me</h1>
+        <p class="text-sm">
+          Want to get in touch? Fill out the form below to send me a message.
+        </p>
+        <form style="padding: 16px; width: 100%" class="flex flex-col gap-4">
+          <div class="flex w-full justify-between">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" class="input" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" class="input" />
+            </div>
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" class="input" />
+          </div>
+
+          <div style="height: 40vh">
+            <label>Description</label>
+            <textarea class="input h-full"> </textarea>
+          </div>
+          <button
+            style="
+              background: var(--success);
+              color: white;
+              max-width: 100px;
+              margin-left: auto;
+              margin-top: 10px;
+            "
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <footer
+        style="
+          background-color: #a3b18a;
+          width: 100%;
+          height: auto;
+          padding: 24px;
+        "
+        class="flex justify-between items-center"
+      >
+        <div>
+          <a href="https://www.bracu.ac.bd/">My University</a>
+          |
+          <a href="https://dicord.gg/Vu3tactW">Discord Link</a>
+        </div>
+        <div class="flex flex-col">
+          <b>Pageloaction:<span id="location"></span></b>
+          <b>Last Modfied:<span id="modified"></span></b>
+        </div>
+      </footer>
+    </section>
+
+    <script>
+      document.getElementById("location").textContent = window.location;
+      document.getElementById("modified").textContent = document.lastModified;
+      const skills = [
+        {
+          name: "Vue.js",
+          experience: "2 years",
+          projects: 8,
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+        },
+        {
+          name: "React",
+          experience: "2 years",
+          projects: 4,
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+        {
+          name: "Nuxt 3",
+          experience: "2 years",
+          projects: 4,
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg",
+        },
+        {
+          name: "Next.js",
+          experience: "2 years",
+          projects: 4,
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        },
+      ];
+
+      const services = [
+        {
+          title: "Frontend Development",
+          description:
+            "Building responsive and dynamic user interfaces with modern web technologies.",
+          icon: "https://api.iconify.design/mdi/code-braces.svg?color=%233a5a40",
+        },
+        {
+          title: "Fullstack Development",
+          description:
+            "Designing and implementing robust server-side logic, databases, and APIs.",
+          icon: "https://api.iconify.design/mdi/layers.svg?color=%233a5a40",
+        },
+        {
+          title: "Android App Development",
+          description:
+            "Creating intuitive and efficient Android applications using the latest tools.",
+          icon: "https://api.iconify.design/mdi/android.svg?color=%233a5a40",
+        },
+        {
+          title: "iOS App Development",
+          description:
+            "Developing sleek and performant iOS apps tailored to Apple's ecosystem.",
+          icon: "https://api.iconify.design/mdi/apple.svg?color=%233a5a40",
+        },
+        {
+          title: "UI/UX Design",
+          description:
+            "Crafting user-centered designs that are both visually appealing and functional.",
+          icon: "https://api.iconify.design/mdi/palette.svg?color=%233a5a40",
+        },
+        {
+          title: "API Designing",
+          description:
+            "Building scalable and secure APIs to power your applications and services.",
+          icon: "https://api.iconify.design/mdi/api.svg?color=%233a5a40",
+        },
+      ];
+      const navItems = [
+        {
+          name: "Home",
+          path: "assignment.html",
+          iconUrl: "https://api.iconify.design/mdi/home.svg?color=%233a5a40",
+        },
+        {
+          name: "About Me",
+          path: "/aboutme.html",
+          iconUrl:
+            "https://api.iconify.design/mdi/account-circle.svg?color=%233a5a40",
+        },
+        {
+          name: "Contact",
+          path: "assignment.html#contact",
+          iconUrl: "https://api.iconify.design/mdi/email.svg?color=%233a5a40",
+        },
+      ];
+
+      const projects = [
+        {
+          title: "Fullstack Disbiz Landing Page",
+          category: "Professional",
+          technologies: ["Next.js", "Shadcn UI", "Resend Email"],
+          features: [
+            "Amazing UI",
+            "SSR",
+            "Email Sending",
+            "Fully Responsive",
+            "SEO Optimization",
+          ],
+          link: "#",
+          image: "https://via.placeholder.com/400x300",
+        },
+        {
+          title: "Research Showcase App",
+          category: "Professional",
+          technologies: ["Next.js", "Shadcn UI", "Resend Email"],
+          features: [
+            "JWT Authentication",
+            "Advance Datatable",
+            "CRUD Operation",
+            "Amazing UI",
+            "SSR",
+            "Email Sending",
+            "Fully Responsive",
+            "SEO Optimization",
+          ],
+          link: "#",
+          image: "https://via.placeholder.com/400x300",
+        },
+        {
+          title: "Ecommerce App",
+          category: "Personal",
+          technologies: ["Vue.js", "Nuxt 3", "Tailwind CSS", "Daisy UI"],
+          features: [
+            "Advanced API fetching",
+            "Filtering",
+            "Sorting",
+            "Searching",
+          ],
+          link: "#",
+          image: "https://via.placeholder.com/400x300",
+        },
+      ];
+
+      const iconcontainer = document.getElementById("ic");
+
+      const skillHtml = skills
+        .map(
+          (skill) => `<div class="flex gap-2 p-4">
+            <img
+              src="${skill.icon}"
+              width="50"
+            />
+            <div>
+              <h1 class="font-bold">${skill.name}</h1>
+              <p class="text-xs">Experience ${skill.experience}</p>
+              <p class="text-xs">${skill.projects} Projects</p>
+            </div>
+          </div>`
+        )
+        .join("");
+
+      iconcontainer.innerHTML = skillHtml;
+
+      const servicecontainer = document.getElementById("service");
+
+      const serviceHtml = services
+        .map(
+          (s) => `<div class="flex gap-2 p-4">
+            <img
+              src="${s.icon}"
+              width="50"
+            />
+            <div>
+              <h1 class="font-bold">${s.title}</h1>
+              <p class="text-xs">Experience ${s.description}</p>
+            
+            </div>
+          </div>`
+        )
+        .join("");
+
+      servicecontainer.innerHTML = serviceHtml;
+
+      const projectContainer = document.getElementById("project");
+
+      const spanGet = (arr) => {
+        return arr.map((i) => `<span>${i}</span>`);
+      };
+
+      const projectHtml = projects.map(
+        (p) => ` <div class="card flex flex-col gap-2">
+            <h1 style="color: var(--success)" class="text-xl">
+              ${p.title}
+            </h1>
+            <span
+              style="
+                background-color: var(--primary);
+                border-radius: 24px;
+                color: white;
+                font-size: small;
+                padding: 4px;
+                width:auto;
+                max-width:100px;
+                display: flex;
+                justify-content: center;
+              "
+              >${p.category}</span
+            >
+            <p class="text-sm">${spanGet(p.technologies)}</p>
+            <p class="text-xl font-bold">${spanGet(p.features)}</p>
+            <div>
+              <button
+                style="background-color: var(--success); color: aliceblue"
+              >
+               <a href='${p.link}'>View</a>
+              </button>
+            </div>
+          </div>`
+      );
+
+      projectContainer.innerHTML = projectHtml;
+
+      const navContainer = document.getElementById("nav");
+      const navhtml = navItems.map(
+        (i) => `
+      <a href="${i.path}">
+          <img
+            src="${i.iconUrl}"
+            width="30px cursor-pointer"
+          />
+        </a>
+      `
+      );
+      navContainer.innerHTML = navhtml;
+    </script>
+  </body>
+</html>
