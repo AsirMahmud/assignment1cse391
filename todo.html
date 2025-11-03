@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="flex">
+    <div
+      class="side-nav"
+      style="
+        width: 48px;
+        height: 100vh;
+        position: fixed;
+        background-color: #a3b18a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <nav
+        id="nav"
+        class="flex flex-col items-center justify-center w-full h-full"
+      ></nav>
+    </div>
+    <section style="margin-left: 10%; width: 100%; margin-right: 10%" c>
+      <div style="margin: 16px" class="flex flex-col gap-4">
+        <h1 class="" style="font-size: 64px; color: var(--success)">
+          To Do List
+        </h1>
+        <form id="myform" class="flex flex-col gap-4" style="width: 80">
+          <textarea id="task" class="" style="width: 500px; height: 200px">
+          </textarea>
+          <button
+            style="
+              width: 200px;
+              background-color: var(--secondary);
+              color: white;
+            "
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+        <div>
+          <h1 class="text-3xl pb-4">Todos</h1>
+          <div id="todos"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    const navItems = [
+      {
+        name: "Home",
+        path: "assignment.html",
+        iconUrl: "https://api.iconify.design/mdi/home.svg?color=%233a5a40",
+      },
+      {
+        name: "About Me",
+        path: "aboutme.html",
+        iconUrl:
+          "https://api.iconify.design/mdi/account-circle.svg?color=%233a5a40",
+      },
+      {
+        name: "Contact",
+        path: "assignment.html#contact",
+        iconUrl: "https://api.iconify.design/mdi/email.svg?color=%233a5a40",
+      },
+      {
+        name: "Fortune Generator",
+        path: "fortuneGenerator.html",
+        iconUrl: "https://api.iconify.design/mdi/head.svg?color=%233a5a40",
+      },
+    ];
+
+    const navContainer = document.getElementById("nav");
+    const navhtml = navItems.map(
+      (i) => `
+          <a href="${i.path}">
+              <img
+                src="${i.iconUrl}"
+                width="30px cursor-pointer"
+              />
+            </a>
+          `
+    );
+    navContainer.innerHTML = navhtml;
+
+    const form = document.getElementById("myform");
+    const todos = document.getElementById("todos");
+    let tasks = [];
+
+    const saveTasks = () => {
+      try {
+        localStorage.setItem("todos", JSON.stringify(tasks));
+      } catch (e) {
+        console.error("Failed to save todos to localStorage", e);
+      }
+    };
+
+    // Load tasks from localStorage on page load
+    try {
+      const stored = localStorage.getItem("todos");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          tasks = parsed;
+        }
+      }
+    } catch (e) {
+      console.error("Failed to load todos from localStorage", e);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const task = document.getElementById("task").value.trim();
+
+      if (task !== "") {
+        tasks.push({
+          id: crypto.randomUUID(),
+          task: task,
+          completed: false,
+        });
+        saveTasks();
+      }
+      document.getElementById("task").value = "";
+      updateDisplay();
+    });
+
+    const updateDisplay = () => {
+      todos.innerHTML = ""; // Clear existing content
+
+      tasks.forEach((i) => {
+        const taskDiv = document.createElement("div");
+        taskDiv.style =
+          "background: var(--primary); width: 80%; border-radius: 40px; padding: 10px; margin-bottom: 10px;";
+        taskDiv.className = "flex items-center gap-4";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = i.completed;
+        checkbox.addEventListener("change", function () {
+          i.completed = this.checked;
+          console.log(`Task ${i.id} completed: ${i.completed}`);
+          saveTasks();
+          taskText.style = i.completed
+            ? "text-decoration: line-through; color: gray;"
+            : "";
+        });
+
+        const taskText = document.createElement("p");
+        taskText.innerText = i.task;
+        taskText.style = i.completed
+          ? "text-decoration: line-through; color: gray;"
+          : "";
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete";
+        deleteBtn.style =
+          "margin-left:auto; background-color: #d90429; color: white; border: none; border-radius: 12px; padding: 6px 12px; cursor: pointer;";
+        deleteBtn.addEventListener("click", function () {
+          tasks = tasks.filter((t) => t.id !== i.id);
+          saveTasks();
+          updateDisplay();
+        });
+
+        taskDiv.appendChild(checkbox);
+        taskDiv.appendChild(taskText);
+        taskDiv.appendChild(deleteBtn);
+
+        todos.appendChild(taskDiv);
+      });
+    };
+
+    // Initial render after loading tasks
+    updateDisplay();
+  </script>
+</html>
